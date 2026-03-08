@@ -1,0 +1,161 @@
+/* Reset & Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    background-color: #ffffff;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* --- Header Navigation --- */
+.portfolio-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #1a1a1a;
+    padding: 0;
+    height: 60px;
+}
+
+.nav-left {
+    background-color: #1a1a1a
+    height: 100%;
+    display: flex;
+    align-items: center;
+    padding: 0 40px;
+}
+
+.logo-text {
+    color:#8b004b;
+    font-weight: 800;
+    font-size: 26px;
+    letter-spacing: 1px;
+}
+
+.nav-center {
+    display: flex;
+    gap: 40px;
+}
+
+.nav-center a {
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+.nav-right {
+    display: flex;
+    gap: 20px;
+    padding-right: 40px;
+}
+
+.nav-right a {
+    color: #ffffff;
+    font-size: 18px;
+    transition: color 0.3s;
+}
+
+.nav-right a:hover {
+    color: #ff4d4d;
+}
+
+/* --- About Section --- */
+.about-section {
+    padding: 80px 10%;
+    display: flex;
+    justify-content: center;
+}
+
+.container {
+    display: flex;
+    max-width: 1100px;
+    gap: 60px;
+    align-items: flex-start;
+}
+
+/* Foto Styling */
+.photo-wrapper {
+    flex: 1;
+}
+
+.profile-img {
+    width: 100%;
+    max-width: 380px;
+    height: auto;
+    display: block;
+    filter: grayscale(20%); /* Memberikan efek dramatis sedikit */
+    box-shadow: 20px 20px 0px #f0f0f0; /* Efek shadow kaku di belakang */
+}
+
+/* Content Styling */
+.content-wrapper {
+    flex: 1.5;
+    padding-top: 40px;
+}
+
+.red-dot {
+    width: 8px;
+    height: 8px;
+    background-color: #ff4d4d;
+    border-radius: 50%;
+    margin-bottom: 20px;
+}
+
+h1 {
+    font-size: 32px;
+    font-weight: 800;
+    margin-bottom: 10px;
+    letter-spacing: 1px;
+}
+
+h2 {
+    font-size: 18px;
+    font-weight: 700;
+    margin-bottom: 30px;
+    letter-spacing: 1px;
+}
+
+.description-list {
+    list-style: none;
+}
+
+.description-list li {
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+    font-size: 16px;
+    font-weight: 400;
+}
+
+.description-list li span {
+    margin-right: 15px;
+    font-size: 20px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+        text-align: center;
+    }
+    .photo-wrapper, .content-wrapper {
+        flex: none;
+        width: 100%;
+    }
+    .profile-img {
+        margin: 0 auto;
+    }
+    .description-list li {
+        justify-content: center;
+    }
+    .red-dot {
+        margin: 0 auto 20px;
+    }
+}

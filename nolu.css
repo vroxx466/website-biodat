@@ -1,0 +1,75 @@
+/* --- Dashboard Page Styles --- */
+
+.dashboard-body {
+    background-color: #cadbe3; /* Warna biru muda background sesuai gambar */
+    margin: 0;
+}
+
+.top-nav-black {
+    background-color: #000;
+    padding: 15px 30px;
+    height: 60px;
+}
+
+.nav-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: white;
+}
+
+.spark-icon {
+    font-size: 45px;
+    color: #e0d5ff; /* Warna ungu muda bintang */
+}
+
+.home-icon {
+    text-decoration: none;
+    font-size: 40px;
+    color: #8c92ac;
+}
+
+.dashboard-container {
+    padding: 40px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Banner Biru Tua */
+.main-banner {
+    background-color: #2e6a99;
+    height: 180px;
+    border-radius: 30px;
+    margin-bottom: 50px;
+    width: 70%; /* Mengikuti lebar di gambar */
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+/* Grid Box Biru Terang */
+.card-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 kolom */
+    gap: 30px;
+}
+
+.card {
+    background-color: #94a7e7;
+    height: 200px;
+    border-radius: 40px;
+    transition: transform 0.2s;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    background-color: #8395d6;
+}
+
+/* Responsif untuk HP */
+@media (max-width: 768px) {
+    .card-grid {
+        grid-template-columns: 1fr;
+    }
+    .main-banner {
+        width: 100%;
+    }
+}

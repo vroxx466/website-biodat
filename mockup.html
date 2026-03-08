@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Game Plan - Dashboard</title>
+    <link rel="stylesheet" href="mokup.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body class="dashboard-body">
+
+    <header class="top-nav-black">
+        <div class="nav-content">
+            <a href="index.html" class="home"></a>
+        </div>
+    </header>
+    </main>
+<style>
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Segoe UI, Arial, sans-serif;
+}
+
+body{
+background:#f4f7fb;
+}
+
+/* NAVBAR */
+.navbar{
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:15px 40px;
+background:white;
+box-shadow:0 2px 8px rgba(0,0,0,0.05);
+}
+
+.logo{
+font-size:24px;
+font-weight:bold;
+color:#8b004b
+}
+
+.menu{
+display:flex;
+gap:20px;
+}
+
+.menu a{
+text-decoration:none;
+color:#333;
+font-size:14px;
+}
+
+.home-icon {
+    text-decoration: none;
+    font-size: 40px;
+    color: #8c92ac;
+}
+
+.nav-buttons button{
+padding:8px 16px;
+border-radius:20px;
+border:none;
+cursor:pointer;
+margin-left:10px;
+}
+
+
+
+.home{
+background:linear-gradient(90deg,#ff8a00,#ff5e00);
+color:white;
+}
+
+/* HERO */
+.hero{
+background:linear-gradient(135deg,#528edb,#4b3cac);
+padding:40px;
+color:white;
+}
+
+.search-box{
+background:white;
+margin-top:20px;
+padding:15px;
+border-radius:40px;
+display:flex;
+justify-content:space-between;
+align-items:center;
+}
+
+.search-box input{
+border:none;
+outline:none;
+width:70%;
+font-size:16px;
+}
+
+.dropdown{
+background:#fff3e0;
+padding:8px 15px;
+border-radius:20px;
+cursor:pointer;
+}
+
+/* PROMO */
+.promo{
+margin:30px;
+padding:15px;
+background:linear-gradient(90deg,#5b7cff,#7b5bff);
+color:white;
+border-radius:12px;
+text-align:center;
+font-weight:bold;
+}
+
+
+.cards{
+display:flex;
+gap:20px;
+flex-wrap:wrap;
+}
+
+.card{
+background:white;
+border-radius:15px;
+padding:20px;
+width:260px;
+box-shadow:0 4px 12px rgba(0,0,0,0.08);
+transition:.3s;
+cursor:pointer;
+}
+
+.card:hover{
+transform:translateY(-5px);
+}
+
+.blue{
+background:linear-gradient(135deg,#4facfe,#00f2fe);
+color:white;
+}
+
+.red{
+background:linear-gradient(135deg,#ff5f6d,#ffc371);
+color:white;
+}
+
+.price{
+margin-top:10px;
+font-size:20px;
+font-weight:bold;
+}
+
+.discount{
+background:#00c853;
+padding:4px 10px;
+border-radius:10px;
+font-size:12px;
+display:inline-block;
+margin-top:10px;
+}
+
+.countdown{
+color:red;
+font-weight:bold;
+margin-left:10px;
+}
+
+</style>
+</head>
+<body>
+
+<div class="navbar">
+<div class="logo">NOXENON</div>
+
+<div class="menu">
+<a href="#">prestasi</a>
+<a href="#">layanan</a>
+</div>
+
+<div class="nav-buttons">
+<button class="login" onclick="login()">Masuk</button>
+<button class="home">
+    <a href="index.html" style="text-decoration: none; color: white;">home</a>
+</button>
+
+</div>
+</div>
+
+
+<div class="hero">
+
+<h2 id="greeting">Hi!</h2>
+<p>mauc cari siapa?</p>
+
+<div class="search-box">
+
+<input type="text" id="searchInput" placeholder="Cari orang...">
+
+<div class="dropdown" onclick="changeClass()" id="classText">
+
+anggota
+</div>
+
+</div>
+
+</div>
+
+
+<div class="section">
+
+<h2>ANGGOTA</h2>
+
+<div class="cards" id="cardContainer">
+
+
+<div class="card blue" data-name="ORVIN SATYAWAN CAHYONO" onclick="pindahHalaman()">
+    <h3>ORVIN SATYAWAN CAHYONO</h3>
+<a href="dl.html" style="text-decoration: none; color: white;">Lihat Profil</a>
+
+
+
+
+
+</div>
+
+
+<div class="card red" data-name="ALBANI CARAKA WIJAYA">
+
+<h3>ALBANI CARAKA WIJAYA</h3>
+
+</div>
+
+
+<div class="card blue" data-name="ARYAMANAR DIAN SASMITA">
+
+<h3>ARYAMANAR DIAN SASMITA</h3>
+
+</div>
+
+
+</div>
+
+</div>
+
+
+
+<script>
+
+/* SAPA-AN */
+let hour = new Date().getHours();
+let greet = "Hi";
+
+if(hour < 12) greet = "Selamat Pagi";
+else if(hour < 18) greet = "Selamat Siang";
+else greet = "Selamat Malam";
+
+document.getElementById("greeting").innerText = greet + ", GUYS!";
+
+
+
+/* SEARCH */
+document.getElementById("searchInput").addEventListener("keyup", function(){
+
+let value = this.value.toLowerCase();
+
+let cards = document.querySelectorAll(".card");
+
+cards.forEach(card=>{
+
+let name = card.dataset.name.toLowerCase();
+
+if(name.includes(value))
+card.style.display="block";
+else
+card.style.display="none";
+
+});
+
+});
+
+
+
+/* DROPDOWN */
+let classes = ["UTBK","SMA","SMP","SD"];
+
+let index = 0;
+
+function changeClass(){
+
+index++;
+
+if(index>=classes.length)
+index=0;
+
+document.getElementById("classText").innerText =
+classes[index]+" ▼";
+
+}
+
+
+
+/* LOGIN BUTTON */
+function login(){
+
+alert("Menu login dibuka");
+
+}
+
+
+
+/* SUBSCRIBE BUTTON */
+function subscribe(){
+
+alert("Terima kasih telah berlangganan!");
+}
+
+function cardBlue() {
+   window.location.href = "orvin.html";
+}
+
+
+/* COUNTDOWN 14 JAM */
+let time = 14*60*60;
+
+setInterval(()=>{
+
+let h = Math.floor(time/3600);
+let m = Math.floor((time%3600)/60);
+let s = time%60;
+
+document.getElementById("countdown").innerText =
+h.toString().padStart(2,"0")+":"+
+m.toString().padStart(2,"0")+":"+
+s.toString().padStart(2,"0");
+
+if(time>0) time--;
+
+},1000);
+
+
+
+/* CLICK CARD */
+document.querySelectorAll(".card").forEach(card=>{
+
+card.onclick = ()=>{
+
+alert("Kamu memilih "+card.dataset.name);
+
+}
+
+});
+function cardBlue() {
+    window.location.href = "orvin.html";
+}
+</script>
+
+
+</body>
+</html>

@@ -1,0 +1,154 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    background-color: #fdf7f2; /* Warna krem pucat sesuai gambar */
+    overflow-x: hidden;
+}
+
+/* --- Navigation --- */
+header {
+    padding: 20px 50px;
+    background: #2b2d42
+}
+
+.logo{
+font-size:26px;
+font-weight:bold;
+color:#8b004b;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 25px;
+    font-size: 14px;
+    font-weight: 600;
+    color: black
+}
+
+.nav-buttons .btn-outline {
+    border: 1px solid #b31b5d;
+    color: #b31b5d;
+    background: transparent;
+    padding: 10px 20px;
+    border-radius: 20px;
+    margin-right: 10px;
+    cursor: pointer;
+}
+
+.nav-buttons .btn-filled {
+    background: #b31b5d;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 20px;
+    cursor: pointer;
+}
+
+/* --- Hero Section --- */
+.hero {
+    position: relative;
+    height: 85vh;
+    display: flex;
+    align-items: center;
+    padding: 0 10%;
+    z-index: 1;
+}
+
+.hero-content {
+    max-width: 500px;
+    color: white;
+    z-index: 2;
+}
+
+.subtitle {
+    font-size: 18px;
+    color: #8c92ac;
+    margin-bottom: 20px;
+}
+
+h1 {
+    font-size: 3.5rem;
+    line-height: 1.1;
+    margin-bottom: 30px;
+}
+
+.description {
+    font-size: 16px;
+    line-height: 1.6;
+    margin-bottom: 40px;
+    color: #e0e0e0;
+}
+
+.btn-cta {
+    background: #b31b5d;
+    color: white;
+    border: none;
+    padding: 15px 30px;
+    border-radius: 25px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+/* --- Background Shape --- */
+/* Membuat efek lengkungan ungu besar */
+.bg-shape {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 60%;
+    height: 100%;
+    background-color: #311b38; /* Warna ungu gelap */
+    z-index: 0;
+    border-bottom-right-radius: 500px;
+    border-top-right-radius: 100px;
+}
+
+/* --- Play Button --- */
+.hero-visual {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 2;
+}
+
+.play-button {
+    width: 100px;
+    height: 100px;
+    background: white;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    cursor: pointer;
+    transition: transform 0.3s;
+}
+
+.play-button:hover {
+    transform: scale(1.1);
+}
+
+.triangle {
+    width: 0;
+    height: 0;
+    border-top: 15px solid transparent;
+    border-bottom: 15px solid transparent;
+    border-left: 25px solid #b31b5d;
+    margin-left: 5px;
+}
